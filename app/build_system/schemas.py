@@ -1,9 +1,9 @@
 ﻿from typing import Annotated
+
 from fastapi import Body
 from pydantic import BaseModel, field_validator
 
 from app.build_system.builds import TasksBuilder
-from app.logger import logger
 
 
 class SchemaRequestBuild(BaseModel):

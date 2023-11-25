@@ -4,7 +4,6 @@ from fastapi import FastAPI
 
 from app.build_system.builds import TasksBuilder
 from app.build_system.router import router as build_system_router
-from app.logger import logger
 
 
 @asynccontextmanager
