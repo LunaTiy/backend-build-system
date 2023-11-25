@@ -32,6 +32,22 @@ class IncorrectBuildFileException(BuildsSystemException):
 
     def __init__(
             self,
-            file_path: str
+            details: str
     ) -> None:
-        super().__init__(self.status_code, self.detail + file_path)
+        super().__init__(self.status_code, self.detail + details)
+
+
+class TasksKeyError(BuildsSystemException):
+    status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+    detail = "Tasks does not contains: "
+
+    def __init__(self, task_name: str) -> None:
+        super().__init__(self.status_code, self.detail + task_name)
+
+
+# class BuildsKeyError(BuildsSystemException):
+#     status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
+#     detail = "Builds does not contains: "
+#
+#     def __init__(self, build_name: str) -> None:
+#         super().__init__(self.status_code, self.detail + build_name)

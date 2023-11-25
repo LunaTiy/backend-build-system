@@ -1,11 +1,13 @@
-﻿from pydantic import BaseModel, field_validator
+﻿from typing import Annotated
+from fastapi import Body
+from pydantic import BaseModel, field_validator
 
 from app.build_system.builds import TasksBuilder
 from app.logger import logger
 
 
 class SchemaRequestBuild(BaseModel):
-    build: str
+    build: Annotated[str, Body(description="Build name")]
 
     @field_validator("build")  # noqa
     @classmethod
