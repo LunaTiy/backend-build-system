@@ -1,0 +1,16 @@
+﻿version: "3.9"
+
+services:
+  service:
+    container_name: backend-build-system
+    image: backend-build-system
+    build:
+      context: .
+      dockerfile: Dockerfile
+    command:
+      - /bin/sh
+      - -c
+      - |
+        uvicorn app.main:app --host=0.0.0.0 --port=8000
+    ports:
+      - "8001:8000"
