@@ -43,11 +43,3 @@ class TasksKeyError(BuildsSystemException):
 
     def __init__(self, task_name: str) -> None:
         super().__init__(self.status_code, self.detail + task_name)
-
-
-# class BuildsKeyError(BuildsSystemException):
-#     status_code = status.HTTP_500_INTERNAL_SERVER_ERROR
-#     detail = "Builds does not contains: "
-#
-#     def __init__(self, build_name: str) -> None:
-#         super().__init__(self.status_code, self.detail + build_name)

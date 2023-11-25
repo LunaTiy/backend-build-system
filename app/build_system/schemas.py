@@ -9,7 +9,7 @@ from app.build_system.builds import TasksBuilder
 class SchemaRequestBuild(BaseModel):
     build: Annotated[str, Body(description="Build name")]
 
-    @field_validator("build")  # noqa
+    @field_validator("build")
     @classmethod
     def validate_build(cls, value: str) -> str:
         if value not in TasksBuilder.builds:

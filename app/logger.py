@@ -5,14 +5,13 @@ import colorlog
 
 def init_logger(
         name: str,
-        log_level: int = logging.INFO,
-        handler: logging.Handler = logging.StreamHandler()
+        handler: logging.Handler,
+        log_level: int = logging.INFO
 ) -> logging.Logger:
     log = logging.getLogger(name)
     log.setLevel(log_level)
     formatter = colorlog.ColoredFormatter("%(asctime)s %(log_color)s[%(levelname)s] %(message)s")
 
-    handler = logging.StreamHandler()
     handler.setLevel(log_level)
     handler.setFormatter(formatter)
 
@@ -20,4 +19,4 @@ def init_logger(
     return log
 
 
-logger = init_logger("build-system")
+logger = init_logger("build-system", logging.StreamHandler())
