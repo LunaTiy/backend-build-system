@@ -54,4 +54,4 @@ class BuildsReader:
         return tasks_graph
 
 
-build_reader = BuildsReader()
+reader = BuildsReader()
