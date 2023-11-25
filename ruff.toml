@@ -1,0 +1,54 @@
+﻿line-length = 120
+
+target-version = "py311"
+
+select = [
+    "A",
+    "B",
+    "C90",
+    "E",
+    "W",
+    "F",
+    "ISC",
+    "UP",
+    "RUF",
+    "ANN",
+    "I",
+    "N",
+    "ASYNC",
+    "S",
+    "PIE",
+    "T20",
+    "PYI",
+    "PT",
+    "Q",
+    "RET",
+    "SLF",
+    "SLOT",
+    "SIM",
+    "TID",
+    "TCH",
+    "INT",
+    "ARG",
+    "PTH",
+    "TD",
+    "FIX",
+    "ERA",
+    "PGH",
+    "FLY",
+    "PERF"
+]
+
+ignore = [
+    "RUF001", # Кириллические символы в string
+    "RUF002", # Кириллические символы в dockstring
+    "RUF003", # Кириллические символы в комментарии
+    "ANN101",
+    "ANN102"
+]
+
+fix = false
+
+fixable = [
+    "ALL"
+]
