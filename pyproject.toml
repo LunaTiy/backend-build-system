@@ -5,7 +5,10 @@ description = ""
 authors = [
     {name = "Daniil Savushkin", email = "savushkin-daniil-99@yandex.ru"},
 ]
-dependencies = []
+dependencies = [
+    "fastapi>=0.104.1",
+    "uvicorn>=0.24.0.post1",
+]
 requires-python = ">=3.11"
 readme = "README.md"
 license = {text = "MIT"}
@@ -13,3 +16,12 @@ license = {text = "MIT"}
 [build-system]
 requires = ["pdm-backend"]
 build-backend = "pdm.backend"
+
+[tool.pdm.dev-dependencies]
+test = [
+    "pytest>=7.4.3",
+    "pytest-xdist>=3.5.0",
+]
+lint = [
+    "ruff>=0.1.6",
+]
